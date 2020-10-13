@@ -1,0 +1,51 @@
+PRIMO ESERCIZIO
+Seleziona tutti gli ospiti che sono stati identificati con la carta di identità:
+
+SELECT `name`,`lastname`
+FROM `ospiti` 
+WHERE `document_type` = 'CI';
+
+
+
+SECONDO ESERCIZIO
+Seleziona tutti gli ospiti che sono nati dopo il 1988:
+
+SELECT `name`, `lastname`,`date_of_birth`
+FROM `ospiti` 
+WHERE `date_of_birth` > '1988-12-31';
+
+
+
+TERZO ESERCIZIO
+Seleziona tutti gli ospiti il cui nome inizia con la D:
+
+SELECT `name`,`lastname`
+FROM `ospiti` 
+WHERE `name` LIKE 'D%';
+
+
+
+QUARTO ESERCIZIO
+Calcola il totale degli ordini accepted:
+
+SELECT COUNT(id) 
+FROM `pagamenti` 
+WHERE `status` = 'accepted';
+
+
+
+
+
+QUINTO ESERCIZIO
+Qual è il prezzo massimo pagato?
+
+SELECT MAX(`price`) AS Prezzo_piu_alto
+FROM `pagamenti`;
+
+
+SESTO ESERCIZIO
+Seleziona gli ospiti riconosciuti con patente e nati nel 1975:
+
+SELECT `name`, `lastname` 
+FROM `ospiti` WHERE `document_type` = 'Driver License' 
+AND YEAR(`date_of_birth`) = '1975';
