@@ -56,3 +56,11 @@ Quanti posti letto ha l’hotel in totale?
 
 SELECT SUM(`beds`) AS 'Totale_letti'
 FROM `stanze`;
+
+
+OTTAVO ESERCIZIO
+Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query):
+
+SELECT `name`,`lastname`,`date_of_birth`
+FROM `ospiti` 
+WHERE DATEDIFF(CURRENT_TIMESTAMP, `date_of_birth`) > 20;
