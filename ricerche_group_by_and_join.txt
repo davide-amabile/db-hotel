@@ -20,10 +20,9 @@ GROUP BY `status`;
 TERZO ESERCIZIO
 Conta quante volte è stata prenotata ogni stanza:
 
-SELECT stanze.room_number, prenotazioni.id AS numero_prenotazioni
-FROM `stanze`
-INNER JOIN `prenotazioni`
-ON prenotazioni.stanza_id = stanze.id;
+SELECT `stanza_id`, COUNT(`id`) AS numero_prenotazioni
+FROM `prenotazioni`
+GROUP BY `stanza_id`;
 
 
 Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti:
