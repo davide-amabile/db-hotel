@@ -1,0 +1,15 @@
+PRIMO ESERCIZIO
+Conta gli ospiti raggruppandoli per anno di nascita:
+
+SELECT YEAR(`date_of_birth`) AS ANNO_DI_NASCITA, COUNT(id) AS num_ospiti
+FROM `ospiti`
+GROUP BY YEAR(`date_of_birth`);
+
+
+
+
+SECONDO ESERCIZIO
+Somma i prezzi dei pagamenti raggruppandoli per status:
+SELECT `status`,  SUM(`price`) AS PREZZO_TOTALE
+FROM `pagamenti`
+GROUP BY `status`;
