@@ -13,3 +13,14 @@ Somma i prezzi dei pagamenti raggruppandoli per status:
 SELECT `status`,  SUM(`price`) AS PREZZO_TOTALE
 FROM `pagamenti`
 GROUP BY `status`;
+
+
+
+
+TERZO ESERCIZIO
+Conta quante volte è stata prenotata ogni stanza:
+
+SELECT stanze.room_number, prenotazioni.configurazione_id AS numero_prenotazioni
+FROM `stanze`
+INNER JOIN `prenotazioni`
+ON prenotazioni.stanza_id = stanze.id;
