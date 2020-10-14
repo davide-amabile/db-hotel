@@ -24,3 +24,10 @@ SELECT stanze.room_number, prenotazioni.configurazione_id AS numero_prenotazioni
 FROM `stanze`
 INNER JOIN `prenotazioni`
 ON prenotazioni.stanza_id = stanze.id;
+
+
+Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti:
+
+SELECT HOUR(`updated_at`) AS ORA, COUNT(`configurazione_id`) AS NUMERO_PRENOTAZIONI
+FROM `prenotazioni`
+GROUP BY HOUR(`updated_at`);
