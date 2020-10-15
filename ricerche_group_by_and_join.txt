@@ -25,8 +25,43 @@ FROM `prenotazioni`
 GROUP BY `stanza_id`;
 
 
+
+QUARTO ESERCIZIO
 Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti:
 
 SELECT HOUR(`updated_at`) AS ORA, COUNT(id) AS NUMERO_PRENOTAZIONI
 FROM `prenotazioni`
 GROUP BY HOUR(`updated_at`);
+
+
+QUINTO ESERCIZIO
+Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
+
+
+
+
+SESTO ESERCIZIO
+Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+
+
+
+
+SETTIMO ESERCIZIO
+Stampare tutti gli ospiti per ogni prenotazione
+SELECT * 
+FROM `prenotazioni_has_ospiti` 
+INNER JOIN ospiti
+ON ospiti.id = prenotazioni_has_ospiti.ospite_id;
+
+
+
+OTTAVO ESERCIZIO
+Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018:
+SELECT paganti.name, paganti.lastname, pagamenti.price 
+FROM `prenotazioni`
+INNER JOIN pagamenti
+ON pagamenti.prenotazione_id = prenotazioni.id
+INNER JOIN paganti
+ON pagamenti.pagante_id = paganti.id
+WHERE YEAR(prenotazioni.created_at) = 2018
+AND MONTH(prenotazioni.created_at) = 5;
